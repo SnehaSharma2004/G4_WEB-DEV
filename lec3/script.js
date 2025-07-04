@@ -11,7 +11,7 @@ function orderDetail(cart, cb){
         let totalCost=totalProducts*1000;
         console.log(`Total Products: ${totalProducts}`);
         console.log(`Total Cost: ${totalCost}`);
-        cb(totalProducts, totalCost);
+        cb(totalProducts, totalCost,paymentGateWay);
     },2000)
 }
 
@@ -21,16 +21,16 @@ function orderSummary(totalProducts, totalCost, cb){
     setTimeout(()=>{
         let orderID= Math.floor(Math.random()*10000);
         console.log(`your order ID: ${orderID}`);
-        cb(totalProducts, totalCost, orderID);
+        cb(totalProducts, totalCost, orderID,successfulOrder);
     }, 2000)
 }
 
-function paymentGateWay(orderID, totalProducts, totalCost, cb){
+function paymentGateWay(totalProducts, totalCost, orderID, cb){
     //orderID, product details and price...payment is successful
     console.log("Processing payment...");
     setTimeout(() => {
         console.log(`Payment of ₹${totalCost} for ${totalProducts} items done successfully.`);
-        cb(orderID, cart, totalPrice);
+        cb(orderID, cart, totalCost);
     }, 2000)
 }
 
@@ -42,13 +42,15 @@ function successfulOrder(orderID, cart, totalCost){
     console.log(`Total Paid: ₹${totalCost}`);
 }
 
-orderDetail(cart, (totalProducts, totalCost) => {
-    orderSummary(totalProducts, totalCost, (orderID, totalProducts, totalCost) => {
-        paymentGateway(orderID, totalProducts, totalCost, (orderID, cart, totalCost) => {
-            successfulOrder(orderID, cart, totalCost);
-        });
-    });
-});
+// orderDetail(cart, (totalProducts, totalCost) => {
+//     orderSummary(totalProducts, totalCost, (orderID, totalProducts, totalCost) => {
+//         paymentGateway(orderID, totalProducts, totalCost, (orderID, cart, totalCost) => {
+//             successfulOrder(orderID, cart, totalCost);
+//         });
+//     });
+// });
+
+orderDetail(cart, orderSummary);
 
 //PROTOTYPE OF FILTER
 
