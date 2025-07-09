@@ -1,0 +1,23 @@
+#grandparent {
+        /* background-color: lightblue; */
+        border: 2px solid red;;
+        padding: 20px;
+        width: 300px;
+    }
+    #parent {
+        /* background-color: lightgreen;
+        */
+        border: 2px solid green;
+        padding: 20px;
+        width: 200px;
+    }
+    #child {
+        /* background-color: lightcoral; */
+        border: 2px solid blue;
+        padding: 20px;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        width: 100px;
+        margin: 0 auto;
+    }
