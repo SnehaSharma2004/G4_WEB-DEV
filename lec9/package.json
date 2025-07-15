@@ -1,0 +1,17 @@
+{
+  "name": "lec8",
+  "version": "1.0.0",
+  "description": "this is a tutorial for modules",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
