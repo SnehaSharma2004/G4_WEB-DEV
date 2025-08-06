@@ -1,0 +1,14 @@
+{
+  "name": "firstpackage-json-sneha",
+  "version": "1.0.0",
+  "description": "this is first package",
+  "main": "changeset.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sneha sharma",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5"
+  }
+}
